@@ -42,6 +42,31 @@
 
   <build>
     <finalName>simplewebapp</finalName>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <url>http://127.0.0.1:8080/manager/text</url>
+          <username>tomcat</username>
+          <password>qwerty</password>
+          <httpsPort>442</httpsPort>
+          <path>/auth</path>
+        </configuration>
+      </plugin>
+
+    </plugins>
   </build>
 
 </project>

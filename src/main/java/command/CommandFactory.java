@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class CommandFactory {
     private static CommandFactory instance = new CommandFactory();
-    private Map<String,Command> commands = new HashMap<String, Command>();
+    private Map<String,Command> commands = new HashMap<>();
 
     private CommandFactory(){
         commands.put("/loginForm", new LoginForm());

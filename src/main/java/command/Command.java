@@ -1,11 +1,13 @@
 package command;
 
-import com.sun.deploy.net.HttpRequest;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author Stepan
  */
 public interface Command {
-    void execute(HttpRequest httpRequest);
+
+    String execute(HttpServletRequest httpRequest);
 
 }
