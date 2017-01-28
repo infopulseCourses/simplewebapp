@@ -9,6 +9,7 @@ public class RegistrationForm implements Command {
 
     @Override
     public String execute(HttpServletRequest httpRequest) {
-        return "jsp/registration.jsp";
+
+        return "WEB-INF/jsp/registration.jsp";
     }
 }

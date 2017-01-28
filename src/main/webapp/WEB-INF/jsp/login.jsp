@@ -5,7 +5,7 @@
 </head>
 <body>
 ${sessionScope.error}
-<form action="/login" method="post">
+<form action="./login" method="post">
     <input type="text" name="login"/>
     <br>
     <input type="password" name="password"/>

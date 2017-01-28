@@ -9,6 +9,7 @@ public class LoginForm implements Command {
 
     @Override
     public String execute(HttpServletRequest httpRequest) {
-        return "jsp/login.jsp";
+        System.out.println("login form execute");
+        return "WEB-INF/jsp/login.jsp";
     }
 }

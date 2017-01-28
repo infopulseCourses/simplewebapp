@@ -18,18 +18,20 @@ public class Registration implements Command {
         String login = httpRequest.getParameter("login");
         String password = httpRequest.getParameter("password");
         HttpSession session = httpRequest.getSession(true);
-        if(firstName == null || login == null || password == null){
+        if(firstName.equals("") || login.equals("") || password.equals("")){
            session.setAttribute("error","Validation failed");
-           return "jsp/registration.jsp";
+            System.out.println("null");
+           return "WEB-INF/jsp/registration.jsp";
         }
 
         LoginService loginService = ServiceFactory.getInstance().getLoginService();
         boolean success = loginService.registration(firstName,login,password);
         if(!success){
             session.setAttribute("error","Registration error");
-            return "jsp/registration.jsp";
+            System.out.println("not success");
+            return "WEB-INF/jsp/registration.jsp";
         }
-
-        return "jsp/login.jsp";
+        System.out.println(" success");
+        return "WEB-INF/jsp/login.jsp";
     }
 }

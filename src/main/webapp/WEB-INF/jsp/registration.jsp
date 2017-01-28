@@ -6,7 +6,7 @@
 
 <body>
 ${sessionScope.error}
-<form action="/registration" method="post">
+<form action="./registration" method="post">
     <input type="text" name="firstName"/>
     <br>
     <input type="text" name="login"/>

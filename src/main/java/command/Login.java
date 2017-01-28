@@ -16,17 +16,17 @@ public class Login implements Command {
         String login = httpRequest.getParameter("login");
         String password = httpRequest.getParameter("password");
         HttpSession session = httpRequest.getSession(true);
-        if( login == null || password == null){
+        if( login.equals("") || password.equals("")){
            session.setAttribute("error","Validation error");
-           return "jsp/login.jsp";
+           return "WEB-INF/jsp/login.jsp";
         }
         LoginService loginService = ServiceFactory.getInstance().getLoginService();
         boolean success = loginService.login(login,password);
         if(!success){
             session.setAttribute("error","Login incorrect");
-            return "jsp/login.jsp";
+            return "WEB-INF/jsp/login.jsp";
         }
         session.setAttribute("login",login);
-        return "jsp/profile.jsp";
+        return "WEB-INF/jsp/profile.jsp";
     }
 }

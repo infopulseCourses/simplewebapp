@@ -29,8 +29,7 @@ public class ServletController extends HttpServlet {
         CommandFactory factory = CommandFactory.getInstance();
         Command command = factory.getCommand(req);
         String view = command.execute(req);
-       /* RequestDispatcher dispatcher = req.getRequestDispatcher(view);
-        dispatcher.forward(req, resp);*/
-       resp.sendRedirect(view);
+        RequestDispatcher dispatcher = req.getRequestDispatcher(view);
+        dispatcher.forward(req, resp);
     }
 }
