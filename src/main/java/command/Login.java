@@ -1,10 +1,12 @@
 package command;
 
+import dto.UserDTO;
 import service.LoginService;
 import service.ServiceFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @author Stepan
@@ -27,6 +29,8 @@ public class Login implements Command {
             return "WEB-INF/jsp/login.jsp";
         }
         session.setAttribute("login",login);
+        List<UserDTO> users = ServiceFactory.getInstance().getLoginService().getAllUsers();
+        session.setAttribute("users",users);
         return "WEB-INF/jsp/profile.jsp";
     }
 }
